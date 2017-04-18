@@ -2,6 +2,7 @@ package bancosDeDados;
 
 import java.util.Date;
 
+import bancosDeDados.BancoDeDadosLivros.estados;
 import livros.Livro;
 import pessoas.Usuario;
 
@@ -72,6 +73,11 @@ public class Sistema {
 		}
 		
 		return false;
+	}
+
+	public estados search(Livro l_) {
+		// TODO Auto-generated method stub
+		return bl_.search(l_);
 	}
 	
 	

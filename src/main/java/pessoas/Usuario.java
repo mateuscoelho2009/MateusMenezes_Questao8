@@ -1,5 +1,7 @@
 package pessoas;
 
+import livros.Livro;
+import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.Sistema;
 
 public class Usuario {
@@ -17,5 +19,10 @@ public class Usuario {
 	public void login(Sistema sistema) {
 		// TODO Auto-generated method stub
 		s_ = sistema;
+	}
+
+	public BancoDeDadosLivros.estados search(Livro l_) {
+		// TODO Auto-generated method stub
+		return s_.search (l_);
 	}
 }
