@@ -9,6 +9,7 @@ public class Sistema {
 	private BancoDeDadosLivros bl_;
 	private BancoDeDadosUsuarios bu_;
 	
+	
 	public Sistema (BancoDeDadosLivros bl, BancoDeDadosUsuarios bu){
 		bl_ = bl;
 		bu_ = bu;
@@ -60,6 +61,17 @@ public class Sistema {
 	public void regDev(Livro l, Usuario u) {
 		// TODO Auto-generated method stub
 		bl_.regDev(l, u);
+	}
+
+	public boolean login (Usuario u_) {
+		// TODO Auto-generated method stub
+		if (bu_.validate (u_)) {
+			u_.login (this);
+			
+			return true;
+		}
+		
+		return false;
 	}
 	
 	

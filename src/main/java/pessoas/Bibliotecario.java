@@ -3,8 +3,6 @@ package pessoas;
 import java.util.Date;
 
 import livros.Livro;
-import bancosDeDados.BancoDeDadosLivros;
-import bancosDeDados.BancoDeDadosUsuarios;
 import bancosDeDados.Sistema;
 
 public class Bibliotecario {

@@ -25,4 +25,9 @@ public class BancoDeDadosUsuarios {
 	public void rmCommitment(Usuario u, Livro l) {
 		
 	}
+
+	public boolean validate(Usuario u_) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
