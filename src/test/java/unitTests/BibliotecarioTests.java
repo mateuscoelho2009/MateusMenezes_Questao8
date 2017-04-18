@@ -52,4 +52,14 @@ public class BibliotecarioTests {
 		
 		Mockito.verify(bu_, Mockito.times(1)).block(u_, 0, 1, 0);
 	}
+	
+	@Test
+	public void AoRegistrarEmprestimoModificarStatusNoBancoDeDados () {
+		fail ("Não implementados");
+	}
+	
+	@Test
+	public void AoRegistrarDevolucaoModificarStatusNoBancoDeDados () {
+		fail ("Não implementados");
+	}
 }
