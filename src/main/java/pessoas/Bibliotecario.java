@@ -5,39 +5,38 @@ import java.util.Date;
 import livros.Livro;
 import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.BancoDeDadosUsuarios;
+import bancosDeDados.Sistema;
 
 public class Bibliotecario {
 	private String nome_;
-	private BancoDeDadosLivros bl_;
-	private BancoDeDadosUsuarios bu_;
+	private Sistema s_;
 	
-	public Bibliotecario(BancoDeDadosUsuarios bu, BancoDeDadosLivros bl, String nome) {
-		bu_ = bu;
+	public Bibliotecario(Sistema s, String nome) {
 		nome_ = nome;
-		bl_ = bl;
+		s_ = s;
 	}
 
 	public void addUser(Usuario u) {
-		bu_.add(u);
+		s_.add(u);
 	}
 
 	public void rmUser(Usuario u) {
 		// TODO Auto-generated method stub
-		bu_.rm(u);
+		s_.rm(u);
 	}
 
 	public void block(Usuario u, int days, int months, int years) {
 		// TODO Auto-generated method stub
-		bu_.block (u, days, months, years);
+		s_.block (u, days, months, years);
 	}
 
 	public void regEmpr(Usuario u, Livro l, Date deliverDate) {
-		bu_.addCommitment (u, l, deliverDate);
-		bl_.regEmpr (l, u, deliverDate);
+		s_.addCommitment (u, l, deliverDate);
+		s_.regEmpr (l, u, deliverDate);
 	}
 
 	public void regDev(Usuario u, Livro l) {
-		bu_.rmCommitment (u, l);
-		bl_.regDev (l, u);
+		s_.rmCommitment (u, l);
+		s_.regDev (l, u);
 	}
 }

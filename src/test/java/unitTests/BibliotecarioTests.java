@@ -14,6 +14,7 @@ import pessoas.Bibliotecario;
 import pessoas.Usuario;
 import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.BancoDeDadosUsuarios;
+import bancosDeDados.Sistema;
 
 public class BibliotecarioTests {
 	
@@ -22,6 +23,7 @@ public class BibliotecarioTests {
 	private Bibliotecario b_;
 	private Usuario u_;
 	private Livro l_;
+	private Sistema s_;
 	
 	@Before
 	public void init () {
@@ -31,7 +33,9 @@ public class BibliotecarioTests {
 		bu_ = Mockito.mock(BancoDeDadosUsuarios.class);
 		bl_ = Mockito.mock(BancoDeDadosLivros.class);
 		
-		b_ = new Bibliotecario(bu_, bl_, "Juliana");
+		s_ = new Sistema(bl_, bu_);
+		
+		b_ = new Bibliotecario(s_, "Juliana");
 	}
 
 	@Test
