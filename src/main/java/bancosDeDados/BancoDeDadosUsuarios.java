@@ -1,5 +1,8 @@
 package bancosDeDados;
 
+import java.util.Date;
+
+import livros.Livro;
 import pessoas.Usuario;
 
 public class BancoDeDadosUsuarios {
@@ -16,6 +19,10 @@ public class BancoDeDadosUsuarios {
 	}
 
 	public void block(Usuario u, int days, int months, int years) {
+		
+	}
+
+	public void addCommitment(Usuario u_, Livro l_, Date deliverDate) {
 		
 	}
 }

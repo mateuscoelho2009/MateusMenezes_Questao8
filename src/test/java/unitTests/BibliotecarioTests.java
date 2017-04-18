@@ -2,29 +2,36 @@ package unitTests;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
+import livros.Livro;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import pessoas.Bibliotecario;
 import pessoas.Usuario;
+import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.BancoDeDadosUsuarios;
 
 public class BibliotecarioTests {
 	
 	private BancoDeDadosUsuarios bu_;
-	
+	private BancoDeDadosLivros bl_;
 	private Bibliotecario b_;
-	
 	private Usuario u_;
+	private Livro l_;
 	
 	@Before
 	public void init () {
 		u_ = new Usuario ("Arnaldo");
+		l_ = new Livro ("Psicologia Social", "Aroldo Rodrigues", 14522);
 		
 		bu_ = Mockito.mock(BancoDeDadosUsuarios.class);
+		bl_ = Mockito.mock(BancoDeDadosLivros.class);
 		
-		b_ = new Bibliotecario(bu_, "Juliana");
+		b_ = new Bibliotecario(bu_, bl_, "Juliana");
 	}
 
 	@Test
@@ -55,7 +62,12 @@ public class BibliotecarioTests {
 	
 	@Test
 	public void AoRegistrarEmprestimoModificarStatusNoBancoDeDados () {
-		fail ("Não implementados");
+		Date d = Mockito.mock(Date.class);
+		
+		b_.regEmpr (u_, l_, d);
+		
+		Mockito.verify(bu_, Mockito.times(1)).addCommitment(u_, l_, d);
+		Mockito.verify(bl_, Mockito.times(1)).regEmpr(l_, u_, d);
 	}
 	
 	@Test

@@ -1,16 +1,20 @@
 package pessoas;
 
-//import bancosDeDados.BancoDeDadosLivros;
+import java.util.Date;
+
+import livros.Livro;
+import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.BancoDeDadosUsuarios;
 
 public class Bibliotecario {
 	private String nome_;
-	//private BancoDeDadosLivros bl_;
+	private BancoDeDadosLivros bl_;
 	private BancoDeDadosUsuarios bu_;
 	
-	public Bibliotecario(BancoDeDadosUsuarios bu, String nome) {
+	public Bibliotecario(BancoDeDadosUsuarios bu, BancoDeDadosLivros bl, String nome) {
 		bu_ = bu;
 		nome_ = nome;
+		bl_ = bl;
 	}
 
 	public void addUser(Usuario u) {
@@ -25,5 +29,10 @@ public class Bibliotecario {
 	public void block(Usuario u, int days, int months, int years) {
 		// TODO Auto-generated method stub
 		bu_.block (u, days, months, years);
+	}
+
+	public void regEmpr(Usuario u_, Livro l_, Date deliverDate) {
+		bu_.addCommitment (u_, l_, deliverDate);
+		bl_.regEmpr (l_, u_, deliverDate);
 	}
 }
