@@ -72,6 +72,9 @@ public class BibliotecarioTests {
 	
 	@Test
 	public void AoRegistrarDevolucaoModificarStatusNoBancoDeDados () {
-		fail ("Não implementados");
+		b_.regDev (u_, l_);
+		
+		Mockito.verify(bu_, Mockito.times(1)).rmCommitment(u_, l_);
+		Mockito.verify(bl_, Mockito.times(1)).regDev(l_, u_);
 	}
 }

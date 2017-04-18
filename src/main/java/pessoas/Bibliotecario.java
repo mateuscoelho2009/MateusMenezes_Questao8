@@ -31,8 +31,13 @@ public class Bibliotecario {
 		bu_.block (u, days, months, years);
 	}
 
-	public void regEmpr(Usuario u_, Livro l_, Date deliverDate) {
-		bu_.addCommitment (u_, l_, deliverDate);
-		bl_.regEmpr (l_, u_, deliverDate);
+	public void regEmpr(Usuario u, Livro l, Date deliverDate) {
+		bu_.addCommitment (u, l, deliverDate);
+		bl_.regEmpr (l, u, deliverDate);
+	}
+
+	public void regDev(Usuario u, Livro l) {
+		bu_.rmCommitment (u, l);
+		bl_.regDev (l, u);
 	}
 }

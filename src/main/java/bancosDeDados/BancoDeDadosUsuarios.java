@@ -22,7 +22,11 @@ public class BancoDeDadosUsuarios {
 		
 	}
 
-	public void addCommitment(Usuario u_, Livro l_, Date deliverDate) {
+	public void addCommitment(Usuario u, Livro l, Date deliverDate) {
+		
+	}
+
+	public void rmCommitment(Usuario u, Livro l) {
 		
 	}
 }

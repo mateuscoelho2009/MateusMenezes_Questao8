@@ -10,5 +10,9 @@ public class BancoDeDadosLivros {
 	public void regEmpr(Livro l_, Usuario u_, Date deliverDate) {
 		
 	}
+
+	public void regDev(Livro l, Usuario u) {
+		
+	}
 	
 }
