@@ -16,8 +16,12 @@ public class BibliotecarioTests {
 	
 	private Bibliotecario b_;
 	
+	private Usuario u_;
+	
 	@Before
 	public void init () {
+		u_ = new Usuario ("Arnaldo");
+		
 		bu_ = Mockito.mock(BancoDeDadosUsuarios.class);
 		
 		b_ = new Bibliotecario(bu_, "Juliana");
@@ -33,17 +37,19 @@ public class BibliotecarioTests {
 	}
 	
 	@Test
-	public void AoExcluirUsuarioEleEhExcluidoDoBancoDeDados () {
-		Usuario u = new Usuario ("Arnaldo");
+	public void AoExcluirUsuarioEleEhExcluidoDoBancoDeDados () {		
+		b_.addUser(u_);
+		b_.rmUser(u_);
 		
-		b_.addUser(u);
-		b_.rmUser(u);
-		
-		Mockito.verify(bu_, Mockito.times(1)).rm(u);
+		Mockito.verify(bu_, Mockito.times(1)).rm(u_);
 	}
 	
 	@Test
 	public void AoBloquearUsuarioInativo () {
-		fail ("Not yet implemented");
+		b_.addUser(u_);
+		
+		b_.block (u_, 0, 1, 0);
+		
+		Mockito.verify(bu_, Mockito.times(1)).block(u_, 0, 1, 0);
 	}
 }

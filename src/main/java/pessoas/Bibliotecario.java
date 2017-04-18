@@ -21,4 +21,9 @@ public class Bibliotecario {
 		// TODO Auto-generated method stub
 		bu_.rm(u);
 	}
+
+	public void block(Usuario u, int days, int months, int years) {
+		// TODO Auto-generated method stub
+		bu_.block (u, days, months, years);
+	}
 }

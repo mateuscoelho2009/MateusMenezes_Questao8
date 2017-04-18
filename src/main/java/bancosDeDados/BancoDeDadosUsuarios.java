@@ -10,4 +10,12 @@ public class BancoDeDadosUsuarios {
 	public void rm(Usuario u) {
 		
 	}
+	
+	public void block () {
+		
+	}
+
+	public void block(Usuario u, int days, int months, int years) {
+		
+	}
 }
