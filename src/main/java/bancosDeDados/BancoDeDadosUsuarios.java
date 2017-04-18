@@ -2,6 +2,7 @@ package bancosDeDados;
 
 import java.util.Date;
 
+import bancosDeDados.BancoDeDadosLivros.estadoVal;
 import livros.Livro;
 import pessoas.Usuario;
 
@@ -29,5 +30,15 @@ public class BancoDeDadosUsuarios {
 	public boolean validate(Usuario u_) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public estadoVal[] getEstados(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Livro[] getLivros(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

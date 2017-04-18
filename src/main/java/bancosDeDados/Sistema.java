@@ -2,9 +2,11 @@ package bancosDeDados;
 
 import java.util.Date;
 
+import bancosDeDados.BancoDeDadosLivros.estadoVal;
 import bancosDeDados.BancoDeDadosLivros.estados;
 import livros.Livro;
 import pessoas.Usuario;
+import pessoas.UsuarioVIP;
 
 public class Sistema {
 	private BancoDeDadosLivros bl_;
@@ -78,6 +80,15 @@ public class Sistema {
 	public estados search(Livro l_) {
 		// TODO Auto-generated method stub
 		return bl_.search(l_);
+	}
+
+	public Livro[] listaLivros(UsuarioVIP usuario) {
+		return bu_.getLivros(usuario);
+	}
+
+	public estadoVal[] listaEstados(UsuarioVIP usuarioVIP) {
+		// TODO Auto-generated method stub
+		return bu_.getEstados(usuarioVIP);
 	}
 	
 	

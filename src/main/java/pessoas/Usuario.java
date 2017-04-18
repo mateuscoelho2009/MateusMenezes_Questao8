@@ -2,11 +2,12 @@ package pessoas;
 
 import livros.Livro;
 import bancosDeDados.BancoDeDadosLivros;
+import bancosDeDados.BancoDeDadosLivros.estadoVal;
 import bancosDeDados.Sistema;
 
 public class Usuario {
 	private String nomeUnico_;
-	private Sistema s_ = null;
+	protected Sistema s_ = null;
 	
 	public Usuario(String nome) {
 		nomeUnico_ = nome;
