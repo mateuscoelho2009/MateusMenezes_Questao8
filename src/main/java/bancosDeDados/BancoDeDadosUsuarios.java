@@ -5,6 +5,8 @@ import java.util.Date;
 import bancosDeDados.BancoDeDadosLivros.estadoVal;
 import livros.Livro;
 import pessoas.Usuario;
+import pessoas.Usuario.estadosUser;
+import pessoas.UsuarioVIP;
 
 public class BancoDeDadosUsuarios {
 	public void add (Usuario u) {
@@ -38,6 +40,11 @@ public class BancoDeDadosUsuarios {
 	}
 
 	public Livro[] getLivros(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public estadosUser getState(UsuarioVIP u_) {
 		// TODO Auto-generated method stub
 		return null;
 	}

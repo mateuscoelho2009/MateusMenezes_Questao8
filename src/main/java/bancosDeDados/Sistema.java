@@ -6,6 +6,7 @@ import bancosDeDados.BancoDeDadosLivros.estadoVal;
 import bancosDeDados.BancoDeDadosLivros.estados;
 import livros.Livro;
 import pessoas.Usuario;
+import pessoas.Usuario.estadosUser;
 import pessoas.UsuarioVIP;
 
 public class Sistema {
@@ -89,6 +90,11 @@ public class Sistema {
 	public estadoVal[] listaEstados(UsuarioVIP usuarioVIP) {
 		// TODO Auto-generated method stub
 		return bu_.getEstados(usuarioVIP);
+	}
+
+	public estadosUser getState(UsuarioVIP usuarioVIP) {
+		// TODO Auto-generated method stub
+		return bu_.getState(usuarioVIP);
 	}
 	
 	

@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import pessoas.Usuario;
+import pessoas.Usuario.estadosUser;
 import pessoas.UsuarioVIP;
 import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.BancoDeDadosLivros.estadoVal;
@@ -95,7 +96,13 @@ public class UsuarioVIPTests {
 	
 	@Test
 	public void UsuarioAprimoradoRecebeSuaSituacaoAoSolicitar () {
+		s_.add(u_);
+		Mockito.when (bu_.validate(u_)).thenReturn (true);
 		
+		assertTrue(s_.login (u_));
+		
+		Mockito.when (bu_.getState(u_)).thenReturn (estadosUser.LIBERADO);
+		assertEquals(u_.getState (), estadosUser.LIBERADO);
 	}
 
 }

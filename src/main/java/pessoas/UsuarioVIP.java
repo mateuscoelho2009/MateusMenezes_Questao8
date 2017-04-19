@@ -18,6 +18,11 @@ public class UsuarioVIP extends Usuario {
 		// TODO Auto-generated method stub
 		return s_.listaEstados(this);
 	}
+
+	public estadosUser getState() {
+		// TODO Auto-generated method stub
+		return s_.getState(this);
+	}
 	
 	
 	

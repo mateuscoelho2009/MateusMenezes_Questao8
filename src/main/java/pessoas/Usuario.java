@@ -8,6 +8,7 @@ import bancosDeDados.Sistema;
 public class Usuario {
 	private String nomeUnico_;
 	protected Sistema s_ = null;
+	public enum estadosUser {BLOQUEADO_POR_ATRASO, BLOQUEADO_POR_COBRANCA, LIBERADO};
 	
 	public Usuario(String nome) {
 		nomeUnico_ = nome;
