@@ -48,4 +48,9 @@ public class BancoDeDadosUsuarios {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void blockExtravio(Usuario u_, Livro l_) {
+		// TODO Auto-generated method stub
+		
+	}
 }

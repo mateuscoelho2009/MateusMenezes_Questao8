@@ -7,7 +7,7 @@ import bancosDeDados.Sistema;
 
 public class Bibliotecario {
 	private String nome_;
-	private Sistema s_;
+	protected Sistema s_;
 	
 	public Bibliotecario(Sistema s, String nome) {
 		nome_ = nome;

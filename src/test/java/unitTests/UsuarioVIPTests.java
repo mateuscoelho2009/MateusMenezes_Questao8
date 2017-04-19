@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import pessoas.Usuario;
 import pessoas.Usuario.estadosUser;
 import pessoas.UsuarioVIP;
 import bancosDeDados.BancoDeDadosLivros;
@@ -58,8 +57,8 @@ public class UsuarioVIPTests {
 		assertEquals(u_.search (l_), BancoDeDadosLivros.estados.RETIRADO);
 		Mockito.when (bl_.search (l_)).thenReturn (estados.DISPONIVEL);
 		assertEquals(u_.search (l_), BancoDeDadosLivros.estados.DISPONIVEL);
-		Mockito.when (bl_.search (l_)).thenReturn (estados.ESTRAVIADO);
-		assertEquals(u_.search (l_), BancoDeDadosLivros.estados.ESTRAVIADO);
+		Mockito.when (bl_.search (l_)).thenReturn (estados.EXTRAVIADO);
+		assertEquals(u_.search (l_), BancoDeDadosLivros.estados.EXTRAVIADO);
 		
 		Mockito.verify(bl_, Mockito.times(3)).search (l_);
 	}

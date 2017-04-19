@@ -96,6 +96,11 @@ public class Sistema {
 		// TODO Auto-generated method stub
 		return bu_.getState(usuarioVIP);
 	}
+
+	public void blockExtravio(Usuario u_, Livro l_) {
+		// TODO Auto-generated method stub
+		bu_.blockExtravio (u_, l_);
+	}
 	
 	
 }

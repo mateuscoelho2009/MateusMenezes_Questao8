@@ -2,7 +2,6 @@ package pessoas;
 
 import livros.Livro;
 import bancosDeDados.BancoDeDadosLivros;
-import bancosDeDados.BancoDeDadosLivros.estadoVal;
 import bancosDeDados.Sistema;
 
 public class Usuario {

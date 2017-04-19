@@ -1,6 +1,6 @@
 package unitTests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
@@ -10,12 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import pessoas.Bibliotecario;
 import pessoas.BibliotecarioVIP;
 import pessoas.Usuario;
 import bancosDeDados.BancoDeDadosLivros;
 import bancosDeDados.BancoDeDadosUsuarios;
 import bancosDeDados.Sistema;
+import bancosDeDados.BancoDeDadosLivros.estados;
 
 public class BibliotecarioVIPTests {
 
@@ -86,6 +86,18 @@ public class BibliotecarioVIPTests {
 	@Test
 	public void AoBloquearUsuarioPorExtravioAtualizaNoBancoDeDados () {
 		b_.blockExtravio (u_, l_);
+		
+		Mockito.verify(bu_, Mockito.times(1)).blockExtravio(u_, l_);
+	}
+	
+	@Test
+	public void AoPesquisarSituacaoDeLivroReceberEstado () {
+		Mockito.when (bl_.search (l_)).thenReturn (estados.RETIRADO);
+		assertEquals(b_.search (l_), BancoDeDadosLivros.estados.RETIRADO);
+		Mockito.when (bl_.search (l_)).thenReturn (estados.DISPONIVEL);
+		assertEquals(b_.search (l_), BancoDeDadosLivros.estados.DISPONIVEL);
+		Mockito.when (bl_.search (l_)).thenReturn (estados.EXTRAVIADO);
+		assertEquals(b_.search (l_), BancoDeDadosLivros.estados.EXTRAVIADO);
 	}
 
 }
